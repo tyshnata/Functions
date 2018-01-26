@@ -2,7 +2,6 @@ public class ElementFibonacci implements Decition{
     static Integer fibElement;
     static Integer number;
 
-
     public ElementFibonacci (Integer number){
         this.number = number;
     }
