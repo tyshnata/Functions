@@ -8,9 +8,9 @@ public class Solutions extends Mistakes{
 
 
 
-    public static void solvingProblems (int i){
+    public static void solvingProblems (int i) {
 
-        switch (i){
+        switch (i) {
             case 1:  // найдем наибольшее число в списке
                 int size1 = 0;
                 System.out.println("Сколько чисел в вашей последовательности?");
@@ -18,38 +18,39 @@ public class Solutions extends Mistakes{
                 Integer[] listTask1 = new Integer[size1]; //определяем, какой будет массив
                 System.out.println("Введите последовательность чисел через пробел:");
 
-                while (!scan.hasNextInt()){ // если элементы массива введены некорректно
+                while (!scan.hasNextInt()) { // если элементы массива введены некорректно
                     erroneousData();
                     scan.next();
                 }
-                for(int j = 0; j < size1; j++){
+                for (int j = 0; j < size1; j++) {
                     listTask1[j] = scan.nextInt(); // заполняем массив числами с консоли
                 }
-               MaxNumber list1 = new MaxNumber(listTask1);
-               list1.answer();
-            break;
+                MaxNumber list1 = new MaxNumber(listTask1);
+                list1.answer();
+                break;
 
-            /*case 2:  // найдем число по индексу
+            case 2:  // найдем число по индексу
 
-                ArrayList<Integer> listTask2 = new ArrayList<Integer> ();
+                List<Integer> listTask2 = new ArrayList<Integer>();
 
                 System.out.println("Введите последовательность чисел через пробел:");
 
-                while (!scan.hasNextInt()){ // если элементы массива введены некорректно
+                while (!scan.hasNextInt()) { // если элементы массива введены некорректно
                     erroneousData();
                     scan.next();
                 }
-                while (scan.hasNextInt()) {
-                    listTask2.add(scan.nextInt());  // заполняем массив числами с консоли
-                    scan.next();
-                }
+
+
+                   // listTask2.add(scan.nextInt());
+
 
                 System.out.println("Введите индекс искомого числа:");
                 Integer ind = scan.nextInt();
+
                 GetElementByIndex list2 = new GetElementByIndex(listTask2,ind);
                 list2.answer();
 
-            break;*/
+            break;
             case 3:
                 Integer  num;
                 System.out.println("Какой элемент последовательности Фибоначчи найти?(от 0 до 46)");
