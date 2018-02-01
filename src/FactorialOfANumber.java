@@ -4,6 +4,7 @@ public class FactorialOfANumber implements Decition{
 
     public FactorialOfANumber(Integer number)
     {
+
         this.number = number;
     }
 

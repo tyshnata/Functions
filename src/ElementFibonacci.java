@@ -3,6 +3,7 @@ public class ElementFibonacci implements Decition{
     static Integer number;
 
     public ElementFibonacci (Integer number){
+
         this.number = number;
     }
     final Integer[] fibonacciNumbers = new Integer[47]; // больше не позволяет Integer
