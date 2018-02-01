@@ -3,6 +3,7 @@ public class StringPalindrom implements Decition{
     static String word;
 
     public StringPalindrom (String word){
+
         this.word = word;
     }
 

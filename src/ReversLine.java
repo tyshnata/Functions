@@ -3,6 +3,7 @@ public class ReversLine implements Decition{
     String line;
 
     public ReversLine (String line){
+
         this.line = line;
     }
 
