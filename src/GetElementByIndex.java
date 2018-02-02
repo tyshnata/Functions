@@ -23,7 +23,7 @@ public class GetElementByIndex implements Decition{
 
     @Override
     public void answer() {
-        System.out.println("Элемент с индексом " + index + "равен  " + getElement( list, index) );
+        System.out.println("Элемент с индексом " + index + " равен  " + getElement( list, index) );
 
     }
 }
