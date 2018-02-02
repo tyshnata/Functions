@@ -13,7 +13,7 @@ public class Solutions extends Mistakes{
                 solutionTask1();
                 break;
             case 2:  // найдем число по индексу
-                 //solutionTask2();
+                 solutionTask2();
             break;
             case 3:
                solutionTask3();
@@ -63,10 +63,11 @@ public class Solutions extends Mistakes{
         list1.answer();
     }
 
-  /* private static void solutionTask2(){
-        List<Integer> listTask2 = new ArrayList<Integer>();
-        int k = 0;
-        System.out.println("Введите последовательность чисел через пробел:");
+  private static void solutionTask2(){
+        List<Integer> list =  Arrays.asList(1, 5, 9, 7, 48, -14, 97);
+
+
+       /* System.out.println("Введите последовательность чисел через пробел:");
 
         while (scan.hasNext()) {
             if (scan.hasNextInt()){
@@ -78,14 +79,19 @@ public class Solutions extends Mistakes{
                 solutionTask2();
             }
 
-        }
+        }*/
 
-        System.out.println("Введите индекс искомого числа:");
-        Integer ind = scan.nextInt();
+       System.out.println("Ваша последовательность: " + list);
+       System.out.println("Введите индекс искомого числа:");
+       while (!scan.hasNextInt()) {
+           erroneousData();
+           scan.next();
+       }
+       Integer ind = scan.nextInt();
 
-        GetElementByIndex list2 = new GetElementByIndex(listTask2,ind);
+        GetElementByIndex list2 = new GetElementByIndex(list,ind);
         list2.answer();
-    }*/
+    }
 
     private static void solutionTask3(){
 
