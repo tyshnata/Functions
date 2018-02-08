@@ -7,7 +7,7 @@ public class ReversLine implements Decition{
         this.line = line;
     }
 
-    public  String reverse (String line){ // метод, меняющий строку
+    private String reverse (String line){ // метод, меняющий строку
 
 
         for (int i = (line.length()-1); i >= 0 ; i--){
