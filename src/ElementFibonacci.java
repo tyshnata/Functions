@@ -8,7 +8,7 @@ public class ElementFibonacci implements Decition{
     }
     final Integer[] fibonacciNumbers = new Integer[47]; // больше не позволяет Integer
 
-    public  Integer fibonacci(Integer number){ // метод, воввращающий n-й элемент последовательности Фибоначчи
+    private Integer fibonacci(Integer number){ // метод, воввращающий n-й элемент последовательности Фибоначчи
         fibonacciNumbers[0] = 0;
         fibonacciNumbers[1] = 1;
 

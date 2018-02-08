@@ -8,7 +8,7 @@ public class FactorialOfANumber implements Decition{
         this.number = number;
     }
 
-    public  Integer factorial(Integer number){
+    private Integer factorial(Integer number){
 
         factorials[0] = 1;
         for (int i = 1; i < 12; i++){
