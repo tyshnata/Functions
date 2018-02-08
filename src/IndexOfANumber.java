@@ -8,7 +8,7 @@ public class IndexOfANumber  implements Decition{
         this.number = number;
     }
 
-    public int search( int number, Integer[] list){  // метод нахождения первого вхождения заданного
+    private int search( int number, Integer[] list){  // метод нахождения первого вхождения заданного
         //целого числа в список
 
         for (int i = 0; i < list.length; i++){
