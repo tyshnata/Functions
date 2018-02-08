@@ -7,7 +7,7 @@ public class SumOfTwoNumbers implements Decition {
         this.secondNumber = secondNumber;
     }
 
-    public  Integer sum ( Integer firstNumber, Integer secondNumber){ // метод, суммирующий два числа
+    private Integer sum ( Integer firstNumber, Integer secondNumber){ // метод, суммирующий два числа
         amount = firstNumber + secondNumber;
         return amount;
 
