@@ -1,36 +1,35 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
 import java.util.Arrays;
 
-public class Solutions extends Mistakes{
+public class Solutions extends Text {
     static Scanner scan = new Scanner(System.in);
 
     public static void solvingProblems (int i) {
 
         switch (i) {
-            case 1:  // найдем наибольшее число в списке
+            case 1:  // maximum list
                 solutionTask1();
                 break;
-            case 2:  // найдем число по индексу
+            case 2:  // get element by index
                  solutionTask2();
             break;
             case 3:
                solutionTask3();
             break;
-            case 4:  // является ли строка палиндромом
+            case 4:  // check palindrom
                 solutionTask4();
             break;
-            case 5:  //
+            case 5:  // sum of two numbers
                solutionTask5();
             break;
-            case 6:  //  факториал числа
+            case 6:  //  factorial of a number
                 solutionTask6();
             break;
-            case 7:   // найти индекс первого вхождения числа
+            case 7:   // the index of the first occurrence of a number in the list
                solutionTask7();
             break;
-            case 8:  //
+            case 8:  // revers line
                solutionTask8();
             break;
             default:
@@ -38,7 +37,7 @@ public class Solutions extends Mistakes{
         }
     }
 
-    private static void solutionTask1(){ //решение задачи 1
+    private static void solutionTask1(){
         Integer[] listTask1;
         int size1;
 
@@ -98,7 +97,7 @@ public class Solutions extends Mistakes{
         Integer  num;
         System.out.println("Какой элемент последовательности Фибоначчи найти?(от 0 до 46)");
 
-        while (!scan.hasNextInt()){ // если число введено некорректно
+        while (!scan.hasNextInt()){
             erroneousData();
             scan.next();
         }
@@ -119,7 +118,7 @@ public class Solutions extends Mistakes{
         String word4;
         System.out.println("Ведите слово и узнаете, палиндром ли это.");
 
-        while (!scan.hasNextLine()){ // если это не слово
+        while (!scan.hasNextLine()){
             erroneousData();
             scan.next();
         }
@@ -132,14 +131,14 @@ public class Solutions extends Mistakes{
 
         Integer num1, num2;
         System.out.println("Ведите первое число: ");
-        while (!scan.hasNextInt()){ // если это не число
+        while (!scan.hasNextInt()){
             erroneousData();
             scan.next();
         }
         num1 = scan.nextInt();
 
         System.out.println("Ведите второе число: ");
-        while (!scan.hasNextInt()){ // если это не число
+        while (!scan.hasNextInt()){
             erroneousData();
             scan.next();
         }
@@ -154,7 +153,7 @@ public class Solutions extends Mistakes{
         Integer  num6;
         System.out.println("Факториал какого числа вы хотите найти?(от 1 до 12)");
 
-        while (!scan.hasNextInt()){ // если число введено некорректно
+        while (!scan.hasNextInt()){
             erroneousData();
             scan.next();
         }
@@ -184,7 +183,7 @@ public class Solutions extends Mistakes{
         }
         size7 = scan.nextInt();
 
-        Integer[] listTask7 = new Integer[size7]; //определяем, какой будет массив
+        Integer[] listTask7 = new Integer[size7];
         System.out.println("Введите последовательность чисел через пробел:");
 
         while (!scan.hasNextInt()){ // если элементы массива введены некорректно
@@ -192,7 +191,7 @@ public class Solutions extends Mistakes{
             scan.next();
         }
         for(int j = 0; j < size7; j++){
-            listTask7[j] = scan.nextInt(); // заполняем массив числами с консоли
+            listTask7[j] = scan.nextInt();
         }
         System.out.println("Введите число, индекс которого надо найти:");
         while (!scan.hasNextInt()){
