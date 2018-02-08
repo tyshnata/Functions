@@ -10,7 +10,7 @@ public class GetElementByIndex implements Decition{
         this.index = index;
     }
 
-    public Integer getElement(List<Integer> list, Integer index){ //метод, возвращающий n-й элемент списка
+    private Integer getElement(List<Integer> list, Integer index){ //метод, возвращающий n-й элемент списка
 
         if ( index < list.size()){  // если индекс не превышает размера списка
             numberByIndex = list.get(index); // получаем значение элемента по индексу
