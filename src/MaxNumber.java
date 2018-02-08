@@ -7,7 +7,7 @@ public class MaxNumber implements Decition { //найти наибольшее �
         this.list = list;
     }
 
-    public  Integer maximum(Integer[] list){ //метод поиска наибольшего числа в списке
+    private  Integer maximum(Integer[] list){ //метод поиска наибольшего числа в списке
         Integer maxNumber = list[0];
 
         for(int i = 0; i < list.length ; i++){ // перебираем элементы массива, ищем Мах
@@ -21,4 +21,6 @@ public class MaxNumber implements Decition { //найти наибольшее �
     public void answer() {
         System.out.println("Самое большое число в данном списке: " + maximum(list) );
     }
+
+
 }
