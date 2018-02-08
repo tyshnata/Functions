@@ -7,7 +7,7 @@ public class StringPalindrom implements Decition{
         this.word = word;
     }
 
-    public  boolean isPalindrom (String word) {  // метод, проверяющий является ли строка палиндромом
+    private boolean isPalindrom (String word) {  // метод, проверяющий является ли строка палиндромом
 
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == word.charAt(word.length() -1 - i)) {
