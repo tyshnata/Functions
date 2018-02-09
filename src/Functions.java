@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Functions extends Solutions{
 
     static Scanner scan = new Scanner(System.in);
-    static int taskNumber; //номер задачи
+    static int taskNumber; //task number
     static String startWord;
 
     public static void main(String[] args) {
@@ -36,8 +36,8 @@ public class Functions extends Solutions{
         functionMenu();
         taskNumber =  scan.nextInt();
         if (taskNumber>0 & taskNumber<9){
-            solvingProblems (taskNumber);// решаем задачу
-            menuOrExitOrAgain();// выбор - меню или выход - или решить эту задачу снова
+            solvingProblems (taskNumber);// the solution of the problem
+            menuOrExitOrAgain();// menu or exit or again
             startWord = scan.next();
             start(startWord);
         }
