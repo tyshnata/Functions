@@ -38,7 +38,7 @@ public class Solutions extends Text {
     }
 
     private static void solutionTask1(){
-        Integer[] listTask1;
+        Integer[] list;
         int size1;
 
         System.out.println("Сколько чисел в вашей последовательности?");
@@ -47,7 +47,7 @@ public class Solutions extends Text {
             scan.next();
         }
         size1 = scan.nextInt();
-        listTask1 = new Integer[size1];
+        list = new Integer[size1];
         System.out.println("Введите последовательность чисел через пробел:");
 
         while (!scan.hasNextInt()) {
@@ -55,10 +55,10 @@ public class Solutions extends Text {
             scan.next();
         }
         for (int j = 0; j < size1; j++) {
-            listTask1[j] = scan.nextInt();
+            list[j] = scan.nextInt();
         }
 
-        MaxNumber list1 = new MaxNumber(listTask1);
+        MaxNumber list1 = new MaxNumber(list);
         list1.answer();
     }
 
@@ -94,7 +94,7 @@ public class Solutions extends Text {
 
     private static void solutionTask3(){
 
-        Integer  num;
+        Integer  number;
         System.out.println("Какой элемент последовательности Фибоначчи найти?(от 0 до 46)");
 
         while (!scan.hasNextInt()){
@@ -102,9 +102,9 @@ public class Solutions extends Text {
             scan.next();
         }
         if ((scan.nextInt()>0 ) & (scan.nextInt()<47)) {
-            num = scan.nextInt();
-            ElementFibonacci number = new ElementFibonacci(num);
-            number.answer();
+            number = scan.nextInt();
+            ElementFibonacci numberFib = new ElementFibonacci(number);
+            numberFib.answer();
         }
 
         else {
@@ -115,42 +115,42 @@ public class Solutions extends Text {
 
     private static void solutionTask4(){
 
-        String word4;
+        String wordScan;
         System.out.println("Ведите слово и узнаете, палиндром ли это.");
 
         while (!scan.hasNextLine()){
             erroneousData();
             scan.next();
         }
-        word4 = scan.nextLine();
-        StringPalindrom word = new StringPalindrom(word4);
+        wordScan = scan.nextLine();
+        StringPalindrom word = new StringPalindrom(wordScan);
         word.answer();
     }
 
     private static void solutionTask5(){
 
-        Integer num1, num2;
+        Integer numberScan1, numberScan2;
         System.out.println("Ведите первое число: ");
         while (!scan.hasNextInt()){
             erroneousData();
             scan.next();
         }
-        num1 = scan.nextInt();
+        numberScan1 = scan.nextInt();
 
         System.out.println("Ведите второе число: ");
         while (!scan.hasNextInt()){
             erroneousData();
             scan.next();
         }
-        num2 = scan.nextInt();
+        numberScan2 = scan.nextInt();
 
-        SumOfTwoNumbers sumNumber = new SumOfTwoNumbers(num1,num2);
+        SumOfTwoNumbers sumNumber = new SumOfTwoNumbers(numberScan1,numberScan2);
         sumNumber.answer();
     }
 
     private static void solutionTask6(){
 
-        Integer  num6;
+        Integer  number;
         System.out.println("Факториал какого числа вы хотите найти?(от 1 до 12)");
 
         while (!scan.hasNextInt()){
@@ -160,9 +160,9 @@ public class Solutions extends Text {
 
         if ((scan.nextInt()>0 ) & (scan.nextInt()<12)){
 
-        num6 = scan.nextInt();
-        FactorialOfANumber number6 = new FactorialOfANumber(num6);
-        number6.answer();
+        number = scan.nextInt();
+        FactorialOfANumber Factorial = new FactorialOfANumber(number);
+        Factorial.answer();
         }
         else {
             erroneousData();
@@ -173,7 +173,7 @@ public class Solutions extends Text {
 
     private static void solutionTask7(){
 
-        int size7 = 0;
+        int sizeSequence;
         Integer number7;
 
         System.out.println("Сколько чисел в вашей последовательности?");
@@ -181,17 +181,17 @@ public class Solutions extends Text {
             erroneousData();
             scan.next();
         }
-        size7 = scan.nextInt();
+        sizeSequence = scan.nextInt();
 
-        Integer[] listTask7 = new Integer[size7];
+        Integer[] list = new Integer[sizeSequence];
         System.out.println("Введите последовательность чисел через пробел:");
 
         while (!scan.hasNextInt()){ // если элементы массива введены некорректно
             erroneousData();
             scan.next();
         }
-        for(int j = 0; j < size7; j++){
-            listTask7[j] = scan.nextInt();
+        for(int j = 0; j < sizeSequence; j++){
+            list[j] = scan.nextInt();
         }
         System.out.println("Введите число, индекс которого надо найти:");
         while (!scan.hasNextInt()){
@@ -199,7 +199,7 @@ public class Solutions extends Text {
             scan.next();
         }
         number7 = scan.nextInt();
-        IndexOfANumber list7 = new IndexOfANumber(number7, listTask7);
+        IndexOfANumber list7 = new IndexOfANumber(number7, list);
         list7.answer();
     }
 
