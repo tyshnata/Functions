@@ -1,25 +1,20 @@
-import java.util.Scanner;
+package TestScanner;
 
-public abstract class Text {
-    static Scanner scan = new Scanner(System.in);
+public class Text {
 
     public static void erroneousData() {
         System.out.println("Вы неправильно ввели данные. Попробуйте еще раз.");
-
     }
 
-
     public static void goodBye() {
-
         System.out.println("Пока!");
     }
 
-
     public static void menuOrExitOrAgain() {
         System.out.println();
-        System.out.println("Если хочешь решить такую задачу еще раз, напиши *again*.");
-        System.out.println("Если хочешь зайти в меню, напиши *menu*.");
-        System.out.println("Если хочешь выйти из программы, напиши *exit*.");
+        System.out.println("Если хочешь решить такую задачу еще раз, напиши *0*.");
+        System.out.println("Если хочешь зайти в меню, напиши *1*.");
+        System.out.println("Если хочешь выйти из программы, напиши *2*.");
 
     }
 
@@ -35,10 +30,23 @@ public abstract class Text {
         System.out.println("8. Переписать строку в обратном порядке");
         System.out.println();
         System.out.println("Напишите номер задачи, которую Вы хотите решить");
-
-        while (!scan.hasNextInt()) {
-            erroneousData();
-            scan.next();
-        }
     }
+
+    public static void questionSizeOfSequence(){
+        System.out.println("Сколько чисел в вашей последовательности?");
+    }
+
+    public static void inputSequence(){
+        System.out.println("Введите последовательность чисел через пробел:");
+    }
+
+    public static void inputIndex(){
+        System.out.println("Введите индекс искомого числа:");
+    }
+
+    public static void inputNumber(){
+        System.out.println("Введите число, индекс которого надо найти:");
+    }
+
+
 }
