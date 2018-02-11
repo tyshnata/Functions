@@ -1,24 +1,32 @@
-public class ReversLine implements Decition{
-    static String  reverseString = "";
-    String line;
+package BasicProgram;
 
-    public ReversLine (String line){
+import TestScanner.ScannerClass;
 
-        this.line = line;
-    }
+public class ReversLine implements Decision {
+    private static String  reverseString;
+    private static String line;
 
-    private String reverse (String line){ // метод, меняющий строку
-
+    private String reverse(String line){
 
         for (int i = (line.length()-1); i >= 0 ; i--){
-            reverseString += line.charAt(i);   // "читаем" строку в обратном порядке
+            reverseString += line.charAt(i);
         }
         return reverseString;
     }
 
     @Override
     public void answer() {
-        System.out.println( "Измененная строка: " + reverse(line) );
 
+        System.out.println( "Измененная строка: " + reverse(line) );
+    }
+
+    @Override
+    public void solutionTask() {
+
+        System.out.println("Введите строку.");
+        ScannerClass scanLine = new ScannerClass();
+        line = scanLine.inputLine();
+
+        answer();
     }
 }

@@ -1,20 +1,20 @@
-public class MaxNumber implements Decition { //найти наибольшее число в списке
-    static Integer maxNumber;
-    static Integer[] list;
+package BasicProgram;
+import TestScanner.ScannerClass;
+import static TestScanner.Text.*;
 
-    public MaxNumber (Integer[] list){
 
-        this.list = list;
-    }
+public class MaxNumber implements Decision {
+    private static Integer[] list;
 
-    private  Integer maximum(Integer[] list){ //метод поиска наибольшего числа в списке
+    private  Integer maximum(Integer[] list){
+
         Integer maxNumber = list[0];
 
-        for(int i = 0; i < list.length ; i++){ // перебираем элементы массива, ищем Мах
+        for(int i = 0; i < list.length ; i++){
             if ( maxNumber >= list[i] ){}
             else maxNumber = list[i];
         }
-        return maxNumber; // возвращаем Мах элемент
+        return maxNumber;
     }
 
     @Override
@@ -22,5 +22,19 @@ public class MaxNumber implements Decition { //найти наибольшее �
         System.out.println("Самое большое число в данном списке: " + maximum(list) );
     }
 
+    public void solutionTask(){
 
+        Integer sizeOfSequence;
+        ScannerClass  number = new ScannerClass();
+        questionSizeOfSequence();
+
+        sizeOfSequence = number.inputValidationNumber();
+
+        ScannerClass listScan = new  ScannerClass();
+        inputSequence();
+
+        list = listScan.inputValidationSequence(sizeOfSequence);
+
+        answer();
+    }
 }

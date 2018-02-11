@@ -1,5 +1,8 @@
 package BasicProgram;
 
-public interface Decition {
+public interface Decision {
+
     public void answer();
+
+    public void solutionTask();
 }

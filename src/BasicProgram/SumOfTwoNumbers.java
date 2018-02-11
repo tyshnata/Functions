@@ -1,13 +1,13 @@
-public class SumOfTwoNumbers implements Decition {
-    static Integer amount = 0;
-    static Integer firstNumber,  secondNumber;
+package BasicProgram;
 
-    public SumOfTwoNumbers (Integer firstNumber, Integer secondNumber){
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
-    }
+import TestScanner.ScannerClass;
 
-    private Integer sum ( Integer firstNumber, Integer secondNumber){ // метод, суммирующий два числа
+public class SumOfTwoNumbers implements Decision {
+
+    private static Integer firstNumber,  secondNumber;
+
+    private Integer sum ( Integer firstNumber, Integer secondNumber){
+        Integer amount;
         amount = firstNumber + secondNumber;
         return amount;
 
@@ -16,6 +16,19 @@ public class SumOfTwoNumbers implements Decition {
     @Override
     public  void answer() {
         System.out.println( firstNumber + " + " + secondNumber + " = " + sum(firstNumber, secondNumber));
+    }
+
+    @Override
+    public void solutionTask() {
+
+        System.out.println("Ведите первое число: ");
+        ScannerClass number = new ScannerClass();
+        firstNumber = number.inputValidationNumber();
+
+        System.out.println("Ведите второе число: ");
+        secondNumber = number.inputValidationNumber();
+        answer();
+
     }
 }
 

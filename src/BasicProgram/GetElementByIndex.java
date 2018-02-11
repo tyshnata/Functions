@@ -1,29 +1,45 @@
-import java.util.List;
+package BasicProgram;
 
-public class GetElementByIndex implements Decition{
-    Integer numberByIndex;
-    List<Integer> list;
-    Integer index;
+import TestScanner.ScannerClass;
+import static TestScanner.Text.*;
 
-    public GetElementByIndex(List<Integer> list, Integer index){
-        this.list = list;
-        this.index = index;
-    }
+public class GetElementByIndex implements Decision {
 
-    private Integer getElement(List<Integer> list, Integer index){ //метод, возвращающий n-й элемент списка
+    private static Integer[] list;
+    private Integer index;
 
-        if ( index < list.size()){  // если индекс не превышает размера списка
-            numberByIndex = list.get(index); // получаем значение элемента по индексу
+    private Integer getElement(Integer[] list, Integer index){
+        Integer numberByIndex;
+
+        if ( index < list.length){
+            numberByIndex = list[index];
         }
         else {
-            numberByIndex = -1; // иначе получаем  значение -1
+            numberByIndex = -1;
         }
-        return numberByIndex; // возвращаем элемент с заданным индексом
+        return numberByIndex;
     }
 
     @Override
     public void answer() {
         System.out.println("Элемент с индексом " + index + " равен  " + getElement( list, index) );
+    }
 
+    @Override
+    public void solutionTask() {
+        Integer sizeOfSequence;
+
+        ScannerClass number = new ScannerClass();
+        questionSizeOfSequence();
+        sizeOfSequence = number.inputValidationNumber();
+
+        ScannerClass listScan = new  ScannerClass();
+        inputSequence();
+        list = listScan.inputValidationSequence(sizeOfSequence);
+
+        inputIndex();
+        index = number.inputValidationNumber();
+
+        answer();
     }
 }

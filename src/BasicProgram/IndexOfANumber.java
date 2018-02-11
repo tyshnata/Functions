@@ -1,31 +1,48 @@
-public class IndexOfANumber  implements Decition{
-    static int ind = 0;
-    static Integer[] list;  //строка
-    static Integer number; // число, первое вхождение которого надо найти в строке
+package BasicProgram;
 
-    public IndexOfANumber(Integer number,Integer[] list){
-        this.list = list ;
-        this.number = number;
-    }
+import TestScanner.ScannerClass;
+import static TestScanner.Text.*;
 
-    private int search( int number, Integer[] list){  // метод нахождения первого вхождения заданного
-        //целого числа в список
+public class IndexOfANumber  implements Decision {
+
+    private static Integer[] list;
+    private static Integer specifiedNumber ;
+
+       private int search( int number, Integer[] list){
+        int index = 0;
 
         for (int i = 0; i < list.length; i++){
-            if (list[i] == number){    // находим индекс первого вхождения числа в список
-                ind = i;
+            if (list[i] == number){
+                index = i;
                 break;
             }
             else
-                ind = -1; // если такого числа в списке нет
+                index = -1;
         }
-        return ind;
+        return index;
     }
 
     @Override
     public void answer() {
         System.out.println();
-        System.out.println( "Индекс первого вхождения числа " + number + " в список " + search( number,  list) );
+        System.out.println( "Индекс первого вхождения числа " + specifiedNumber + " в список: " + search( specifiedNumber,  list) );
+    }
 
+    @Override
+    public void solutionTask() {
+        Integer sizeOfSequence;
+
+        ScannerClass number = new ScannerClass();
+        questionSizeOfSequence();
+        sizeOfSequence = number.inputValidationNumber();
+
+        ScannerClass listScan = new  ScannerClass();
+        inputSequence();
+        list = listScan.inputValidationSequence(sizeOfSequence);
+
+        inputNumber();
+        specifiedNumber  = number.inputValidationNumber() ;
+
+        answer();
     }
 }
