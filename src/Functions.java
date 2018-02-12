@@ -105,7 +105,7 @@ public class Functions {
                 reversLine.solutionTask();
                 break;
             default:
-                System.out.println("Неправильно. Введите номер задачи от 1 до 8: ");
+                System.out.println("Введите номер задачи от 1 до 8: ");
                 break;
         }
     }
