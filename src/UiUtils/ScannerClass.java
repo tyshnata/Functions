@@ -17,17 +17,20 @@ public class ScannerClass extends Text {
     }
 
     public Integer[] inputValidationSequence(Integer sizeOfSequence){
-        Integer[] list;
-        list = new Integer[sizeOfSequence];
-        while (!scan.hasNextInt()) {
-            erroneousData();
-            scan.next();
-        }
+        Integer[] list = new Integer[sizeOfSequence];
 
         for (int j = 0; j < sizeOfSequence; j++) {
-            list[j] = scan.nextInt();
-        }
 
+            if (scan.hasNextInt()){
+            list[j] = scan.nextInt();
+            }
+
+            else {
+                System.out.println("Введите только числа: ");
+                scan.next();
+                inputValidationSequence(sizeOfSequence);
+            }
+         }
         return (list);
     }
 
