@@ -1,7 +1,7 @@
 package BasicProgram;
 
-import TestScanner.ScannerClass;
-import static TestScanner.Text.*;
+import UiUtils.ScannerClass;
+import static UiUtils.Text.*;
 
 public class IndexOfANumber  implements Decision {
 

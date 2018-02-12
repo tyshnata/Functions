@@ -1,6 +1,6 @@
 package BasicProgram;
 
-import TestScanner.ScannerClass;
+import UiUtils.ScannerClass;
 
 public class ReversLine implements Decision {
     private static String  reverseString;

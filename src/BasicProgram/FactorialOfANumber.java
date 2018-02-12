@@ -1,6 +1,6 @@
 package BasicProgram;
 
-import TestScanner.ScannerClass;
+import UiUtils.ScannerClass;
 
 public class FactorialOfANumber implements Decision {
     private static Integer index;
