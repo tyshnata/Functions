@@ -1,4 +1,4 @@
-package TestScanner;
+package UiUtils;
 
 public class Text {
 
@@ -19,7 +19,7 @@ public class Text {
     }
 
     public static void functionMenu() {
-        System.out.println("Задачи:");
+        System.out.println("Задачи: ");
         System.out.println("1. Найти наибольшее число в списке.");
         System.out.println("2. Найти n-й элемент списка .");
         System.out.println("3. Найти n-й элемент последовательности Фибоначчи ");

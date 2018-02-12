@@ -1,4 +1,4 @@
-package TestScanner;
+package UiUtils;
 
 import java.util.Scanner;
 
