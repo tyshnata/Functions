@@ -1,8 +1,9 @@
 import BasicProgram.*;
+
 import UiUtils.ScannerClass;
 import static UiUtils.Text.*;
 
-public class Functions {
+public class Functions extends Constants{
     private static Integer taskNumber;
     private static ScannerClass scanData = new ScannerClass();
     private static Integer startNumber;
@@ -12,11 +13,11 @@ public class Functions {
         System.out.println("Если хочешь найти ответы на некоторые вопросы, напиши *1*, если нет напиши *2*");
 
         startNumber = scanData.inputValidationNumber();
-        start(startNumber);
+        choice(startNumber);
     }
 
-    private static void start(Integer word){ // FIXME: 2/14/18 "start"  what? Render UI or start execute some programme or... Why param is Integer and name is "word" I confused about it.
-        switch (word){ 
+    private static void choice(Integer numberOfChoices){
+        switch (numberOfChoices){
             case 1: 
                 choiceMenu();
                 
@@ -26,7 +27,7 @@ public class Functions {
                 
                 break;
             case 0:
-                choiceAgain();
+                choiceSolveTheProblemAgain();
                    
                 break;
             default: 
@@ -41,23 +42,23 @@ public class Functions {
         taskNumber = scanData.inputValidationNumber();
 
         if (taskNumber > 0 & taskNumber < 9){ // TODO: 2/14/18 what the difference between && and & ? remember and provide refactor here :)
-            solvingProblems (taskNumber);// the solutionTask of the problem
+            // &&  checks only the first condition; It is necessary that both conditions are checked, therefore I use "&"
+            taskChoice(taskNumber);
             menuOrExitOrAgain();
             startNumber = scanData.inputValidationNumber();
-            start(startNumber);
+            choice(startNumber);
         }
         else{
-            System.out.println("Ведите число от 1 до 8: ");// TODO: 2/14/18  I could recommend to put all strings in a class Constants and use it from there.
-            // TODO: 2/14/18 Try to create a separate abstract layer as we talked before in the lesson. Class should be responsible just for rendering our UI(user interface). 
+            ifErrorneousTaskNumber();
             choiceMenu();
         }
     }
 
-    private static void  choiceAgain(){// TODO: 2/14/18  choiceAgain() is name not understandable. again after WHAT?, what the difference between    choiceMenu and  choiceAgain. Try to provide mor correct name.
-        solvingProblems(taskNumber);
+    private static void choiceSolveTheProblemAgain(){
+        taskChoice(taskNumber);
         menuOrExitOrAgain();
         startNumber = scanData.inputValidationNumber();
-        start(startNumber);
+        choice(startNumber);
     }
 
     private static void choiceExit(){
@@ -67,46 +68,45 @@ public class Functions {
     private static void choiceDefault(){
         erroneousData();
         startNumber = scanData.inputValidationNumber();
-        start(startNumber);
+        choice(startNumber);
     }
 
-    private static void solvingProblems (int i) {// FIXME: 2/14/18 Try to provide mor correct name.
+    private static void taskChoice(int i) {
         switch (i) {
-            // FIXME: 2/14/18 try to use a constants for case. for example "case MAXIMUM_LIST_PROGRAM:"
-            case 1:   // maximum list
+            case MAXIMUM_LIST_PROGRAM:
                 MaxNumber maxNumber = new MaxNumber();
                 maxNumber.solutionTask();
                 break;
-            case 2:  // get element by index
+            case  GET_ELEMENT_BY_INDEX_PROGRAM:
                 GetElementByIndex getElementByIndex = new GetElementByIndex();
                 getElementByIndex.solutionTask();
                 break;
-            case 3:  // find the element of the Fibonacci sequence
+            case FIND_FIBONACCI_ELEMENT_PROGRAM:
                 ElementFibonacci elementFibonacci = new ElementFibonacci();
                 elementFibonacci.solutionTask();
                 break;
-            case 4:  // check palindrom
+            case CHECK_PALINDROM_PROGRAM:
                 StringPalindrom stringPalindrom = new StringPalindrom();
                 stringPalindrom.solutionTask();
                 break;
-            case 5:  // sum of two numbers
+            case SUM_OF_TWO_NUMBERS_PROGRAM:
                 SumOfTwoNumbers sumOfTwoNumbers = new SumOfTwoNumbers();
                 sumOfTwoNumbers.solutionTask();
                 break;
-            case 6:  //  factorial of a number
+            case FACTORIAL_PROGRAM:
                 FactorialOfANumber factorialOfANumber = new FactorialOfANumber();
                 factorialOfANumber.solutionTask();
                 break;
-            case 7:   // the index of the first occurrence of a number in the list
+            case NUMBER_INDEX_IN_THE_LIST_PROGRAM:
                 IndexOfANumber indexOfANumber = new IndexOfANumber();
                 indexOfANumber.solutionTask();
                 break;
-            case 8:  // revers line
+            case REVERS_LINE_PROGRAM:
                 ReversLine reversLine = new ReversLine();
                 reversLine.solutionTask();
                 break;
             default:
-                System.out.println("Введите номер задачи от 1 до 8: ");// FIXME: 2/14/18 strings in one plase Constants.java or inside class as inner constants.
+                ifErrorneousTaskNumber();
                 break;
         }
     }
