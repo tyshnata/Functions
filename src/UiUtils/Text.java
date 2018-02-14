@@ -48,5 +48,6 @@ public class Text {
         System.out.println("Введите число, индекс которого надо найти:");
     }
 
+    public static void ifErrorneousTaskNumber(){System.out.println("Введите номер задачи от 1 до 8: ");  }
 
 }
